@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PALINDROME</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   
+    <script>
+            $(document).ready(function(){
+                $("#submit").click(function(){
+                    var x=$("#num").val();
+                    var r=0;
+                    var n=x;
+                    
+                    n = n + "";
+	                r= n.split("").reverse().join("");
+                    console.log(r);
+                    if(r==x) var prom="Palindrome";
+                    else var prom="Not";
+                    var mypromise=new Promise((resolve,reject)=>{
+                
+                if(prom=="Palindrome"){
+                    resolve();
+                }
+                else{
+                    reject();
+                }
+            });
+            mypromise.then(()=>{
+                $("#res").text("Promise resolved");
+            }) .catch(()=>{
+                $("#res").text("Promise rejected");
+            })
+                });
+            });
+           
+           
+        </script>
+
+</head>
+<body >
+    
+        <div class="container" style="text-align: center; margin-top:100px">
+                
+            <div class="row">
+              
+                <div class="col">
+                    
+                    <h5>Enter number</h5>
+                        <input type="text" id="num"/><br><br>
+                        <button id="submit" class="btn btn-success">Submit</button><br><br>
+                        <h5 id="res"></h5>
+                </div>
+            </div>
+        </div>
+    
+</body>
+
+
+</html>

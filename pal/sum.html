@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SUM</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   
+    <script>
+            $(document).ready(function(){
+                $("#submit").click(function(){
+                    var n=$("#num").val();
+                   
+                    function sumofdigit(x,callback){
+                        var str = x.toString();
+                    var sum = 0;
+                    for (var i = 0; i < str.length; i++) {
+                        sum += parseInt(str.charAt(i), 10);
+                    }
+                    callback(sum);
+                    }
+                   
+                   sumofdigit(n,(sum)=>{
+                    $("#res").text("Sum is "+sum);
+                   });
+                   
+                });
+            });
+           
+           
+        </script>
+
+</head>
+<body >
+   
+        <div class="container" style="text-align: center; margin-top:100px">
+                
+            <div class="row">
+              
+                <div class="col">
+                    
+                    <h5>Enter number</h5>
+                        <input type="text" id="num" maxlength="4"/><br><br>
+                        <button id="submit" class="btn btn-success">Submit</button><br><br>
+                         <h5 id="res"></h5>
+                </div>
+            </div>
+        </div>
+    
+</body>
+
+
+</html>
